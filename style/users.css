@@ -1,0 +1,70 @@
+.usersPage{
+    padding: 20px;
+}
+.usersPage h2{
+    padding: 10px 0px;
+    font-size: 30px;
+    color: purple;
+}
+.usersPage .crudBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.usersPage .crudBtn a{
+    text-decoration: none;
+    background-color: rgb(89, 0, 255);
+    color: white;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.usersPage .crudBtn input{
+    outline: none;
+    border: 1px solid grey;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.usersPage .tableContainer{
+    overflow: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.usersPage .tableContainer table{
+    padding: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.452);
+    border-radius: 10px;
+}
+.usersPage .tableContainer table thead tr{
+    background-color: rgb(126, 56, 255);
+}
+.usersPage .tableContainer table thead tr th{
+    text-align: left;
+    color: white;
+    padding: 10px;
+}
+.usersPage .tableContainer table tbody tr td{
+    padding: 10px;
+    font-size: 17px;
+}
+.usersPage .tableContainer table tbody tr td:last-child{
+    display: flex;
+    align-items: center;
+}
+.usersPage .tableContainer table tbody tr td:last-child a{
+    margin: 0px 10px;
+}
+.usersPage .tableContainer table tbody tr:nth-child(even){
+    background-color: rgba(147, 103, 230, 0.8);
+    color: white;
+}
+.usersPage .tableContainer table tbody tr:nth-child(even) td a{
+    background-color: transparent;
+    color: white;
+}
+.usersPage .tableContainer table tbody tr td a{
+    margin: 0px 10px;
+}

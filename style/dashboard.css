@@ -1,0 +1,100 @@
+.dashboardPage .projects{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+}
+.dashboardPage .projects .dropdown{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+}
+.dashboardPage .projects .projectList{
+    position: absolute;
+    top: 110px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(248, 248, 248);
+}
+.dashboardPage .projects .projectList input{
+    border: 0;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid grey;
+}
+.dashboardPage .projects .projectList .items{
+    max-height: 350px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.dashboardPage .projects .projectList .items a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px 5px;
+    border-bottom: 1px solid grey;
+}
+.dashboardPage .projects .projectList a:hover{
+    background-color: rgb(228, 228, 228);
+}
+.dashboardPage .projectMenuTitle{
+    padding: 0px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: purple;
+}
+.dashboardPage .projectMenu{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.dashboardPage .projectMenu .section{
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.699);
+    margin: 10px;
+    border-radius: 10px;
+}
+.dashboardPage .projectMenu .section form{
+    padding: 10px;
+    margin: 0;
+    background-color: transparent;
+}
+.dashboardPage .projectMenu .section form input[Type="submit"]{
+    padding: 15px 30px;
+    background-color: rgb(142, 81, 255);
+    width: 100%;
+    font-size: 20px;
+}
+.dashboardPage .projectMenu .section form input[Type="submit"]:hover{
+    background-color: rgb(119, 45, 255);
+}
+
+@media screen and (max-width:880px){
+    .dashboardPage .projectMenu .section{
+        width: 46%;
+    }
+}
+@media screen and (max-width:530px){
+    .dashboardPage .projects{
+        width: auto;
+    }
+    .dashboardPage .projects .projectList{
+        width: 87%;
+    }
+    .dashboardPage .projectMenu .section{
+        width: 100%;
+    }
+}

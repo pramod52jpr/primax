@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+header{
+    background-color: rgb(142, 81, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+header .hamburger{
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(142, 81, 255);
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+header .hamburger:hover{
+    background-color: rgb(112, 35, 255);
+}
+header .myAccount{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+header .myAccount:hover{
+    color: rgb(244, 215, 255);
+}
+header .myAccount i{
+    margin-right: 5px;
+}
+.logout{
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(183, 1, 238);
+    position: absolute;
+    right: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.logout a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 19px;
+    transition-duration: 0.3s;
+}
+.logout a:hover{
+    background-color: rgb(158, 0, 206);
+}
+.sectionContainer{
+    display: flex;
+}
+.sectionContainer .menuItems{
+    width: 0px;
+    border: 1px solid white;
+    border-left: 0;
+    background-color: rgb(142, 81, 255);
+    overflow: hidden;
+}
+.sectionContainer .menuItems a{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sectionContainer .menuItems a:hover{
+    background-color: rgb(113, 36, 255);
+}
+.sectionContainer .menuItems a i{
+    margin-right: 10px;
+}
+.sectionContainer .menuItems .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+.sectionContainer .menuItems .item i{
+    margin-right: 10px;
+}
+.sectionContainer .menuItems .item:hover{
+    background-color: rgb(113, 36, 255);
+}
+.sectionContainer .menuItems .links{
+    display: flex;
+    flex-direction: column;
+}
+.sectionContainer .menuItems .links a{
+    padding-left: 30px;
+}
+.sectionContainer .content{
+    background-image: url('https://wallpapers.com/images/hd/light-background-ikyjig15tfb42tv5.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    width: 100%;
+    border: 1px solid white;
+    border-right: 0;
+}
