@@ -32,6 +32,9 @@ if(isset($_FILES['addDrawFile']) and isset($_GET['drawId'])){
 ?>
 <?php include "./components/header.php" ?>
 <div class="usersPage">
+    <div class="goback" title="Go Back">
+        <a href="drawings.php?proId=<?php echo $_GET['proId'] ?>&docId=<?php echo $_GET['docId'] ?>"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
+    </div>
     <h2>History</h2>
     <?php
     if($userRow['category']==1){

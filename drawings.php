@@ -88,6 +88,9 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
 ?>
 <?php include "./components/header.php" ?>
 <div class="usersPage">
+    <div class="goback" title="Go Back">
+        <a href="documents.php?proId=<?php echo $_GET['proId'] ?>"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
+    </div>
     <h2>Drawings</h2>
     <div class="crudBtn">
     <?php

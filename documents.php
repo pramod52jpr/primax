@@ -104,6 +104,9 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
 ?>
 <?php include "./components/header.php" ?>
 <div class="usersPage">
+    <div class="goback" title="Go Back">
+        <a href="dashboard.php?pro-id=<?php echo $_GET['proId'] ?>"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></a>
+    </div>
     <h2>Documents</h2>
     <div class="crudBtn">
     <?php
@@ -133,6 +136,7 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
                     <?php
                     if($userRow['category']==1){
                         ?>
+                        <th>Supplier</th>
                         <th>Actions</th>
                         <?php
                     }
@@ -142,7 +146,15 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
             <tbody>
             <?php
             $conn=new Conn();
-            $result=$conn->read("documents","*","`project_id`=$_GET[proId]");
+            session_start();
+            $userId=$_SESSION['user_id'];
+            if($userRow['category']!=1){
+                $docs=" and `doc_supplier`=$userId";
+            }else{
+                $docs="";
+            }
+            $result=$conn->read("documents","*","`project_id`=$_GET[proId]$docs","users on users.`user_id`=documents.`doc_supplier`");
+            session_abort();
             if($result->num_rows>0){
                 while($row=$result->fetch_assoc()){
                     $numOfDocs=$conn->read("drawings","*","`document_id`=$row[doc_id]");
@@ -155,6 +167,7 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
                         <?php
                         if($userRow['category']==1){
                             ?>
+                            <td><?php echo $row['name'] ?></td>
                             <td>
                                 <a href="update-document.php?id=<?php echo $row['doc_id'] ?>&proId=<?php echo $_GET['proId'] ?>"><i class="fa-solid fa-pen"></i></a>
                                 <a href="?del-id=<?php echo $row['doc_id'] ?>&proId=<?php echo $_GET['proId'] ?>"><i class="fa-solid fa-trash"></i></a>

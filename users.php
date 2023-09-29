@@ -117,7 +117,7 @@ if(isset($_GET['id']) and isset($_GET['active'])){
             <tbody>
             <?php
             $conn=new Conn();
-            $result=$conn->read("users","*",null,"join category on users.`category`=category.`cat_id`");
+            $result=$conn->read("users","*",null,"category on users.`category`=category.`cat_id`");
             if($result->num_rows>0){
                 while($row=$result->fetch_assoc()){
                     ?>

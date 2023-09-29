@@ -17,7 +17,7 @@ class Conn{
     public function read($table,$column="*",$where=null,$join=null,$limit=null,$groupby=null,$orderby=null){
         $sql="select $column from $table";
         if($join!=null){
-            $sql.=" $join";
+            $sql.=" join $join";
         }
         if($where!=null){
             $sql.=" where $where";
