@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2023 at 07:59 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Oct 04, 2023 at 01:16 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `cat_id` int(11) NOT NULL,
   `cat_name` varchar(100) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -54,7 +54,7 @@ CREATE TABLE `documents` (
   `doc_po_code` varchar(100) NOT NULL DEFAULT '',
   `doc_po_file` varchar(500) NOT NULL DEFAULT '',
   `doc_supplier` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `documents`
@@ -64,7 +64,7 @@ INSERT INTO `documents` (`doc_id`, `project_id`, `doc_spec`, `doc_desc`, `doc_po
 (1, 5, '35234', 'ok', 'awesome', 'BIOROLES  MASTER USER.pdf', 3),
 (3, 8, 'its my spec', '5gbe', 'gerg', 'Smart lock.pdf', 3),
 (4, 6, 'weguk', 'glh', 'ugih', 'enterence.pdf', 10),
-(5, 5, 'fye', 'fghik', 'jhfuf', 'Smart lock.pdf', 3);
+(5, 5, 'fye', 'fghik', 'jhfuf', 'Smart lock.pdf', 10);
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE `drawings` (
   `document_id` int(11) NOT NULL DEFAULT 0,
   `draw_number` varchar(100) NOT NULL DEFAULT '',
   `draw_title` varchar(500) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `drawings`
@@ -102,7 +102,7 @@ CREATE TABLE `projects` (
   `pro_po_no` varchar(100) NOT NULL DEFAULT '',
   `pro_po_date` varchar(30) NOT NULL DEFAULT '',
   `pro_file` varchar(1000) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `projects`
@@ -126,7 +126,7 @@ CREATE TABLE `revision_drawings` (
   `drawing_id` int(11) NOT NULL DEFAULT 0,
   `drawing_file` varchar(500) NOT NULL DEFAULT '',
   `date` varchar(50) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `revision_drawings`
@@ -156,7 +156,7 @@ CREATE TABLE `users` (
   `username` varchar(20) NOT NULL DEFAULT '',
   `password` varchar(300) NOT NULL DEFAULT '',
   `category` int(11) NOT NULL DEFAULT 2
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
