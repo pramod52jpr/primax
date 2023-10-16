@@ -41,7 +41,7 @@ session_abort();
     <div class="loginForm" style="background-image: url('https://fxhome.com/wp-content/uploads/2020/09/Blog-e1601541985522-1920x1080.jpg');">
         <form action="" method="post">
             <div class="intro">
-                <h2>PRIMAX</h2>
+                <h2>DMS</h2>
             </div>
             <h3>Login Form</h3>
             <label for="username">Username</label>
