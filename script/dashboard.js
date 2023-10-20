@@ -74,13 +74,3 @@ function searchAllUsers(){
         }
     }
 }
-
-// download all po files
-
-function downloadAllFiles(){
-    var allFiles=document.getElementsByClassName("downloadAll");
-    for (let i = 0; i < allFiles.length; i++) {
-        const element = allFiles[i];
-        element.click();
-    }
-}

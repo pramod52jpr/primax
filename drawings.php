@@ -105,24 +105,36 @@ if(isset($_GET['del-id']) and !empty($_GET['del-id']) and intval($_GET['del-id']
             ?>
             <a href="<?php echo $addproject ?>">Add</a>
             <?php
+        }
+    ?>
+    <?php
+    $zip = new ZipArchive();
+    $docResult=$conn->read("documents","`doc_spec`","`doc_id`=$_GET[docId]");
+    $docData=$docResult->fetch_assoc();
+    $docName=$docData['doc_spec'];
+    session_start();
+    $zipFileName = "./pofiles/drawing-files/$docName-$_SESSION[user_id].zip";
+
+    if ($zip->open($zipFileName, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRUE) {
+        $result=$conn->read("drawings","*","`document_id`=$_GET[docId]");if($result->num_rows>0){
+            while($row=$result->fetch_assoc()){
+                $readHistory=$conn->read("revision_drawings","*","`drawing_id`=$row[draw_id]",null,null,null,"`revision_id` desc");
+                $readHistoryData=$readHistory->fetch_assoc();
+                $zip->addFile("./pofiles/drawing-files/".$readHistoryData['drawing_file'],$readHistoryData['drawing_file']);
+            }
+        }
+
+        $zip->close();
     }
     ?>
+
         <div class="options">
-            <a href="#" title="DownLoad All Files" onclick="downloadAllFiles()" style="background-color:green"><i class="fa-solid fa-download"></i></a>
-            <?php
-                $conn=new Conn();
-                $result=$conn->read("drawings","*","`document_id`=$_GET[docId]");if($result->num_rows>0){
-                    while($row=$result->fetch_assoc()){
-                        $readHistory=$conn->read("revision_drawings","*","`drawing_id`=$row[draw_id]",null,null,null,"`revision_id` desc");
-                        $readHistoryData=$readHistory->fetch_assoc();
-                        ?>
-                            <a class="downloadAll" href="./pofiles/drawing-files/<?php echo $readHistoryData['drawing_file'] ?>" style="display:none;text-decoration: none;" download><i class="fa-solid fa-download"></i></a>
-                        <?php
-                    }
-                }
-            ?>
+            <a href="<?php echo $zipFileName ?>" title="DownLoad All Files" style="background-color:green" download><i class="fa-solid fa-download"></i></a>
             <input type="search" name="search" onkeyup="searchDrawing()" placeholder="Search" id="searchDraw">
         </div>
+    <?php
+    session_abort();
+    ?>
     </div>
     <div class="tableContainer">
         <table cellspacing="0">
