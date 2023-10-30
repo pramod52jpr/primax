@@ -17,7 +17,7 @@ if(isset($_FILES['addDrawFile']) and isset($_GET['drawId'])){
         "drawing_file"=>$name,
         "date"=>$date
     ];
-    if($size < 10485760){
+    if($size < 104857600){
         $result=$conn->insert("revision_drawings",$data);
         if($result){
             move_uploaded_file($tmp_name,"./pofiles/drawing-files/$name");
@@ -26,7 +26,7 @@ if(isset($_FILES['addDrawFile']) and isset($_GET['drawId'])){
             echo "<script>alert('Drawing Updation Failed')</script>";
         }
     }else{
-        echo "<script>alert('File Size must be less than 10MB')</script>";
+        echo "<script>alert('File Size must be less than 100MB')</script>";
     }
 }
 ?>

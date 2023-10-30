@@ -41,7 +41,7 @@ if(isset($_GET['id']) and !empty($_GET['id'])){
     <div class="upper">
         <div class="lower">
             <label for="updatedPoFile">P.O. File</label>
-            <input type="file" name="updatedPoFile" id="updatedPoFile" accept=".xlsx,.xls,.pdf">
+            <input type="file" name="updatedPoFile" id="updatedPoFile" accept=".xlsx,.xls,.pdf,.zip">
         </div>
         <div class="lower">
         </div>

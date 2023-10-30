@@ -33,7 +33,7 @@ session_abort();
     <div class="upper">
         <div class="lower">
             <label for="poFile">P.O. File</label>
-            <input type="file" name="poFile" id="poFile" accept=".xlsx,.xls,.pdf" required>
+            <input type="file" name="poFile" id="poFile" accept=".xlsx,.xls,.pdf,.zip" required>
         </div>
         <div class="lower">
         </div>

@@ -23,7 +23,7 @@ session_abort();
     <div class="upper">
         <div class="lower">
             <label for="drawFile">Doc. File</label>
-            <input type="file" name="drawFile" id="drawFile" accept=".xlsx,.xls,.pdf" required>
+            <input type="file" name="drawFile" id="drawFile" accept=".xlsx,.xls,.pdf,.zip" required>
         </div>
         <div class="lower">
         </div>

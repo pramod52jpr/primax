@@ -23,7 +23,7 @@ if(isset($_POST['docSpec']) and isset($_GET['proId'])){
     if($readData->num_rows>0){
         echo "<script>alert('Document Already Added')</script>";
     }else{
-        if($size < 10485760){
+        if($size < 104857600){
             $result=$conn->insert("documents",$data);
             if($result){
                 move_uploaded_file($tmp_name,"./pofiles/document-files/$name");
@@ -32,7 +32,7 @@ if(isset($_POST['docSpec']) and isset($_GET['proId'])){
                 echo "<script>alert('Document Addition Failed')</script>";
             }
         }else{
-            echo "<script>alert('File Size must be less than 2MB')</script>";
+            echo "<script>alert('File Size must be less than 10MB')</script>";
         }
     }
 }
@@ -63,7 +63,7 @@ if(isset($_POST['updateDocSpec']) and isset($_POST['updatedProId'])){
         echo "<script>alert('Project Name Already Added')</script>";
     }else{
         if(!empty($_FILES['updateDocFile']['name'])){
-            if($size < 10485760){
+            if($size < 104857600){
                 $result=$conn->update("documents",$data,"`doc_id`=$updatedProId");
                 if($result){
                     move_uploaded_file($tmp_name,"./pofiles/document-files/$name");
@@ -72,7 +72,7 @@ if(isset($_POST['updateDocSpec']) and isset($_POST['updatedProId'])){
                     echo "<script>alert('Document Updation Failed')</script>";
                 }
             }else{
-                echo "<script>alert('File Size must be less than 10MB')</script>";
+                echo "<script>alert('File Size must be less than 100MB')</script>";
             }
         }else{
             $result=$conn->update("documents",$data,"`doc_id`=$updatedProId");

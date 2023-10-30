@@ -22,7 +22,7 @@ if(isset($_POST['drawNumber']) and isset($_GET['docId'])){
     if($readData->num_rows>0){
         echo "<script>alert('Drawing Already Added')</script>";
     }else{
-        if($size < 10485760){
+        if($size < 104857600){
             $result=$conn->insert("drawings",$data);
             if($result){
                 $drawData=$conn->read("drawings","*","`draw_number`='$drawNumber'");
@@ -43,7 +43,7 @@ if(isset($_POST['drawNumber']) and isset($_GET['docId'])){
                 echo "<script>alert('Drawing Addition Failed')</script>";
             }
         }else{
-            echo "<script>alert('File Size must be less than 10MB')</script>";
+            echo "<script>alert('File Size must be less than 100MB')</script>";
         }
     }
 }

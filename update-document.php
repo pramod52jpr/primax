@@ -35,7 +35,7 @@ if(isset($_GET['id']) and !empty($_GET['id'])){
         </div>
         <div class="lower">
             <label for="updateDocFile">Doc. File</label>
-            <input type="file" name="updateDocFile" id="updateDocFile" accept=".xlsx,.xls,.pdf">
+            <input type="file" name="updateDocFile" id="updateDocFile" accept=".xlsx,.xls,.pdf,.zip">
         </div>
     </div>
     <div class="upper">

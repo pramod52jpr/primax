@@ -23,7 +23,7 @@ if(isset($_POST['proName']) and isset($_FILES['poFile'])){
     if($readData->num_rows>0){
         echo "<script>alert('Project Already Added')</script>";
     }else{
-        if($size < 10485760){
+        if($size < 104857600){
             $result=$conn->insert("projects",$data);
             if($result){
                 move_uploaded_file($tmp_name,"./pofiles/project-files/$name");
@@ -32,7 +32,7 @@ if(isset($_POST['proName']) and isset($_FILES['poFile'])){
                 echo "<script>alert('Project Addition Failed')</script>";
             }
         }else{
-            echo "<script>alert('File Size must be less than 10MB')</script>";
+            echo "<script>alert('File Size must be less than 100MB')</script>";
         }
     }
 }
@@ -63,7 +63,7 @@ if(isset($_POST['updatedProName']) and isset($_POST['updatedProDesc'])){
         echo "<script>alert('Project Name Already Added')</script>";
     }else{
         if(!empty($_FILES['updatedPoFile']['name'])){
-            if($size < 10485760){
+            if($size < 104857600){
                 $result=$conn->update("projects",$data,"`pro_id`=$updatedId");
                 if($result){
                     move_uploaded_file($tmp_name,"./pofiles/project-files/$name");
@@ -72,7 +72,7 @@ if(isset($_POST['updatedProName']) and isset($_POST['updatedProDesc'])){
                     echo "<script>alert('Project Updation Failed')</script>";
                 }
             }else{
-                echo "<script>alert('File Size must be less than 10MB')</script>";
+                echo "<script>alert('File Size must be less than 100MB')</script>";
             }
         }else{
             $result=$conn->update("projects",$data,"`pro_id`=$updatedId");

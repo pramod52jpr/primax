@@ -13,7 +13,7 @@ session_abort();
     <div class="upper">
         <div class="lower">
             <label for="addDrawFile">File</label>
-            <input type="file" style="width: 100%;" name="addDrawFile" id="addDrawFile" accept=".xlsx,.xls,.pdf" required>
+            <input type="file" style="width: 100%;" name="addDrawFile" id="addDrawFile" accept=".xlsx,.xls,.pdf,.zip" required>
         </div>
     </div>
     <div class="save">
